@@ -18,7 +18,7 @@ def mostrar_mensagem_inicial():
     Exibe uma mensagem de boas-vindas ao desafio.
     Retorno esperado: string com a mensagem "Bem-vindo ao Desafio de Git!"
     """
-    def mostrar_mensagem_inicial():
+    
         return "Bem-vindo ao Desafio de Git!"
 
 
@@ -41,6 +41,7 @@ def criar_mensagem_commit(funcao_nome):
     pass
 
 
+
 def verificar_tag_valida(tag):
     """
     Verifica se uma tag está no formato 'vX.Y' (ex: v1.0, v2.1).
@@ -60,3 +61,5 @@ def gerar_relatorio_final(funcoes_concluidas):
     "Desafio concluído! 2 funções implementadas com sucesso."
     """
     pass
+
+mostrar_mensagem_inicial()
