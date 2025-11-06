@@ -45,4 +45,15 @@ mensagens = criar_mensagem_commit(comandos)
 for mensagem in mensagens:
     print(mensagem)
 
+def verificar_tag_valida(tag):
+    """Verifica se uma tag está no formato 'vX.Y' (ex: v1.0, v2.1).
+    Retorna True se o formato for válido, caso contrário False."""
+    return bool(re.fullmatch(r"v\d+\.\d+", tag))
+
+print(verificar_tag_valida("v2.1")) 
+print(verificar_tag_valida("v10.5")) 
+print(verificar_tag_valida("v1")) 
+print(verificar_tag_valida("1.0"))
+
+
 
