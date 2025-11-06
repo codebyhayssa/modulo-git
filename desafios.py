@@ -19,7 +19,9 @@ def mostrar_mensagem_inicial():
     Retorno esperado: string com a mensagem "Beeem-vindo ao Desafio de Git!"
     """
     
-    return "Bem-vindo ao Desafio de Git!"
+    mensagem = "Sejam bem-vindos"
+    return mensagem
+    
 
 
 def listar_comandos_git_basicos():
@@ -62,4 +64,4 @@ def gerar_relatorio_final(funcoes_concluidas):
     """
     pass
 
-mostrar_mensagem_inicial()
+print(mostrar_mensagem_inicial())
