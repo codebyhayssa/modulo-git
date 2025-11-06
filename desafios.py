@@ -27,22 +27,23 @@ def mostrar_mensagem_inicial():
 def listar_comandos_git_basicos():
     """
     Retorna uma lista com os principais comandos básicos do Git.
-    Exemplo de saída:
-    ["git init", "git add", "git commit", "git status", "git push"]
     """
-    lista = ["git init", "git add", "git commit", "git status", "git push"]
-    return lista
-    pass
+    return ["git init", "git add", "git commit", "git status", "git push"]
 
+def criar_mensagem_commit(lista_comandos):
+    """
+    Recebe uma lista de comandos e retorna mensagens de commit padronizadas.
+    """
+    mensagens = [f"Comando básico a seguir : {comando}" for comando in lista_comandos]
+    return mensagens
 
-def criar_mensagem_commit(funcao_nome):
-    """
-    Recebe o nome de uma função e retorna uma mensagem de commit padronizada.
-    Exemplo:
-    criar_mensagem_commit("listar_comandos_git_basicos") ->
-    "Implementa função listar_comandos_git_basicos"
-    """
-    pass
+# Teste das funções
+comandos = listar_comandos_git_basicos()
+mensagens = criar_mensagem_commit(comandos)
+
+for mensagem in mensagens:
+    print(mensagem)
+
 
 
 
@@ -66,5 +67,6 @@ def gerar_relatorio_final(funcoes_concluidas):
     """
     pass
 
-print(mostrar_mensagem_inicial())
-print(listar_comandos_git_basicos())
+#print(mostrar_mensagem_inicial())
+#print(listar_comandos_git_basicos())
+
