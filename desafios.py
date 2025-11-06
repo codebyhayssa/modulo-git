@@ -1,3 +1,4 @@
+import re
 """
 Desafio Módulo Git
 
@@ -52,21 +53,30 @@ def verificar_tag_valida(tag):
     Verifica se uma tag está no formato 'vX.Y' (ex: v1.0, v2.1).
     Retorna True se o formato for válido, caso contrário False.
     """
-    pass
+    return bool(re.fullmatch(r"v\d+\.\d+", tag))
+
+print(verificar_tag_valida("v2.1"))  
+print(verificar_tag_valida("v10.5")) 
+print(verificar_tag_valida("v1"))    
+print(verificar_tag_valida("1.0")) 
 
 
-def gerar_relatorio_final(funcoes_concluidas):
+import inspect
+
+def gerar_relatorio_final():
     """
-    Recebe uma lista com os nomes das funções implementadas
-    e retorna uma mensagem final do desafio.
-
-    Exemplo:
-    gerar_relatorio_final(["mostrar_mensagem_inicial", "listar_comandos_git_basicos"])
-    ->
-    "Desafio concluído! 2 funções implementadas com sucesso."
+    Identifica todas as funções definidas no módulo atual
+    e retorna uma mensagem com a lista e a quantidade.
     """
-    pass
+    funcoes = [nome for nome, obj in inspect.getmembers(__import__(__name__), inspect.isfunction)
+               if obj.__module__ == __name__]
+    
+    quantidade = len(funcoes)
+    lista_formatada = "\n- " + "\n- ".join(funcoes)
+    return f"Desafio concluído! {quantidade} funções encontradas no arquivo:\n{lista_formatada}"
 
 #print(mostrar_mensagem_inicial())
 #print(listar_comandos_git_basicos())
+print(gerar_relatorio_final())
+
 
